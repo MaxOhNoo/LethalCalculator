@@ -1,7 +1,4 @@
 export function overtime(credits, quota) {
-  if (!quota) {
-    quota = 130;
-  }
   if (credits < quota) {
     return credits;
   }
