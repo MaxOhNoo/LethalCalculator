@@ -6,7 +6,7 @@
         scrap = undefined;
 
     function handleSubmit(event) {
-        scrap = overtime(credits, quota);
+        scrap = overtime(credits, quota, days);
     }
 
     function formCheck(event) {
@@ -27,6 +27,8 @@
     <input
         type="number"
         id="credits"
+        class="largeformbox"
+        placeholder="Enter a number"
         bind:value={credits}
         on:change={((scrap = undefined), formCheck)}
     />
@@ -34,22 +36,21 @@
     <input
         type="number"
         id="quota"
-        bind:value={quota}
+        class="smallformbox"
         placeholder="130"
+        bind:value={quota}
         on:change={((scrap = undefined), formCheck)}
     />
     <label for="days">Deadline:</label>
     <input
         type="number"
         id="days"
-        bind:value={days}
+        class="smallformbox"
         placeholder="0 days"
+        bind:value={days}
         on:change={((scrap = undefined), formCheck)}
     />
     <button type="submit" on:focus={formCheck} on:mouseover={formCheck}>Submit</button>
-    {#if !credits}
-        <p>Please enter a number of Credits Needed</p>
-    {/if}
 </form>
 
 {#if scrap !== undefined}
@@ -75,6 +76,12 @@
     }
     h1 {
         font-size: 80px;
+    }
+    .smallformbox {
+        width: 150px;
+    }
+    .largeformbox {
+        width: 350px;
     }
     input[type='number'] {
         appearance: textfield;
