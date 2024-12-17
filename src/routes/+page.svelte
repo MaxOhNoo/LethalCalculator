@@ -1,5 +1,5 @@
 <script>
-  import { overtime } from "./overtime.js";
+  import { overtime } from './overtime.js';
   let credits,
     quota,
     days,
@@ -28,7 +28,7 @@
     type="number"
     id="credits"
     bind:value={credits}
-    on:change={(scrap = undefined), formCheck}
+    on:change={((scrap = undefined), formCheck)}
   />
   <label for="quota">Quota:</label>
   <input
@@ -44,11 +44,9 @@
     id="days"
     bind:value={days}
     placeholder="0 days"
-    on:change={(scrap = undefined), formCheck}
+    on:change={((scrap = undefined), formCheck)}
   />
-  <button type="submit" on:focus={formCheck} on:mouseover={formCheck}
-    >Submit</button
-  >
+  <button type="submit" on:focus={formCheck} on:mouseover={formCheck}>Submit</button>
   {#if !credits}
     <p>Please enter a number of Credits Needed</p>
   {/if}
@@ -60,12 +58,12 @@
 
 <style>
   @font-face {
-    font-family: "3270";
-    src: url("/3270.ttf") format("truetype");
-    }
+    font-family: '3270';
+    src: url('/3270.ttf') format('truetype');
+  }
   * {
     text-align: center;
-    font-family: "3270";
+    font-family: '3270';
     font-size: 40px;
     color: rgb(0, 255, 0);
     background-color: #000000;
@@ -78,7 +76,7 @@
   h1 {
     font-size: 80px;
   }
-  input[type="number"] {
+  input[type='number'] {
     appearance: textfield;
   }
 </style>
