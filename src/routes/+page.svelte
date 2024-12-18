@@ -50,7 +50,13 @@
         bind:value={days}
         on:change={((scrap = undefined), formCheck)}
     />
-    <button type="submit" on:focus={formCheck} on:mouseover={formCheck}>Submit</button>
+    <button
+        type="submit"
+        style="width: 350px;"
+        on:focus={formCheck}
+        on:mouseover={formCheck}
+        class={!credits == true ? 'disabled' : ''}>Submit</button
+    >
 </form>
 
 {#if scrap !== undefined}
@@ -82,6 +88,13 @@
     }
     .largeformbox {
         width: 350px;
+    }
+    .disabled {
+        opacity: 0.5;
+        color: gray;
+        border-color: gray;
+        pointer-events: none;
+        cursor: not-allowed;
     }
     input[type='number'] {
         appearance: textfield;
