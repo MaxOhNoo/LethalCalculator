@@ -1,9 +1,9 @@
 <script>
     import { overtime } from './overtime.js';
-    let credits,
-        quota,
-        days,
-        scrap = undefined;
+    let credits = $state(undefined),
+        quota = $state(undefined),
+        days = $state(undefined),
+        scrap = $state(undefined);
 
     function handleSubmit(event) {
         scrap = overtime(credits, quota, days);
@@ -22,7 +22,7 @@
     }
 </script>
 
-<form on:submit|preventDefault={handleSubmit}>
+<form onsubmit={handleSubmit}>
     <label for="credits">Credits Needed:</label>
     <input
         type="number"
@@ -30,7 +30,7 @@
         class="largeformbox"
         placeholder="Enter a number"
         bind:value={credits}
-        on:change={((scrap = undefined), formCheck)}
+        onchange={((scrap = undefined), formCheck)}
     />
     <label for="quota">Quota:</label>
     <input
@@ -39,7 +39,7 @@
         class="smallformbox"
         placeholder="130"
         bind:value={quota}
-        on:change={((scrap = undefined), formCheck)}
+        onchange={((scrap = undefined), formCheck)}
     />
     <label for="days">Deadline:</label>
     <input
@@ -48,13 +48,13 @@
         class="smallformbox"
         placeholder="0 days"
         bind:value={days}
-        on:change={((scrap = undefined), formCheck)}
+        onchange={((scrap = undefined), formCheck)}
     />
     <button
         type="submit"
         style="width: 350px;"
-        on:focus={formCheck}
-        on:mouseover={formCheck}
+        onfocus={formCheck}
+        onmouseover={formCheck}
         class={!credits == true ? 'disabled' : ''}>Submit</button
     >
 </form>
