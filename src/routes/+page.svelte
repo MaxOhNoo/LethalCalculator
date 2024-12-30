@@ -27,7 +27,7 @@
     <input
         type="number"
         id="credits"
-        class="largeformbox"
+        style="width: 350px"
         placeholder="Enter a number"
         bind:value={credits}
         onchange={((scrap = undefined), formCheck)}
@@ -36,7 +36,7 @@
     <input
         type="number"
         id="quota"
-        class="smallformbox"
+        style="width: 150px"
         placeholder="130"
         bind:value={quota}
         onchange={((scrap = undefined), formCheck)}
@@ -45,14 +45,14 @@
     <input
         type="number"
         id="days"
-        class="smallformbox"
+        style="width: 150px"
         placeholder="0 days"
         bind:value={days}
         onchange={((scrap = undefined), formCheck)}
     />
     <button
         type="submit"
-        style="width: 350px;"
+        style="width: 350px"
         onfocus={formCheck}
         onmouseover={formCheck}
         class={!credits == true ? 'disabled' : ''}>Submit</button
@@ -83,12 +83,6 @@
     h1 {
         font-size: 80px;
     }
-    .smallformbox {
-        width: 150px;
-    }
-    .largeformbox {
-        width: 350px;
-    }
     .disabled {
         opacity: 0.5;
         color: gray;
@@ -96,6 +90,7 @@
         pointer-events: none;
         cursor: not-allowed;
     }
+    /* Removed the +1/-1 arrows */
     input[type='number'] {
         appearance: textfield;
     }
