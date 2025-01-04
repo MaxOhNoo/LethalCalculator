@@ -10,13 +10,14 @@
     }
 
     function formCheck(event) {
-        if (credits > 0 !== true) {
+        if (credits <= 0) {
             credits = undefined;
         }
-        if (quota >= 130 !== true) {
+        if (quota < 130) {
             quota = undefined;
         }
-        if (3 >= days >= 0 !== true) {
+        // Days on the 3-0/NOW scale
+        if (days > 3 || days < 0) {
             days = undefined;
         }
     }

@@ -1,15 +1,15 @@
 export function overtime(credits, quota, days) {
-  if (credits > 0 !== true) {
+  if (credits <= 0) {
     return
   }
-  if (quota >= 130 !== true) {
+  if (quota < 130 || quota == undefined) {
     quota = 130;
   }
   if (credits < quota) {
     return credits;
   }
   // Days on the 3-0/NOW scale
-  if (3 >= days >= 0 !== true||days == undefined) {
+  if (days > 3 || days < 0 || days == undefined) {
     days = 0;
   }
 
